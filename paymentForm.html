@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+  <meta charset="utf-8">
+  <title>payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</header>
+<body class="container">
+  <header>
+    <h1>CoffeeRun Payment</h1>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-payment="form">
+          <div class="panel panel-default">
+            <div class="panel-body">
+          <h2>Contact information</h2>
+          <fieldset>
+            <legend>Title</legend>
+            <div class="radio">
+              <label>
+                  <input type="radio" id="title_1" name ="title" value="M.">
+                  Mister
+                </label>
+            </div>
+            <div class="radio">
+              <label>
+                  <input type="radio" id="title_2" name ="title" value="Ms.">
+                  Miss
+                </label>
+            </div>
+          </fieldset>
+
+          <p>
+            <label for="name">
+                <span>Name: </span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+            <input class="form-control" type="text" id="name" name="username" autofocus>
+          </p>
+
+          <p>
+            <label for="email">
+                <span>Email: </span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+            <input class="form-control" type="email" id="mail" name="usermail">
+          </p>
+
+          <p>
+            <label for="pwd">
+                <span>Password: </span>
+                <strong><abbr title="required">*</abbr></strong>
+              </label>
+            <input class="form-control" type="password" id="pwd" name="password">
+          </p>
+
+        </div>
+      </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <section>
+                <h2>Payment information</h2>
+                <p>
+                  <label for="card">
+                      <span>Card type:</span>
+                    </label>
+                  <select id="card" class="form-control" name="usercard">
+                      <option value="visa">Visa</option>
+                      <option value="mc">Mastercard</option>
+                      <option value="amex">American Express</option>
+                    </select>
+                </p>
+                <p>
+                  <label for="number">
+                      <span>Card number:</span>
+                      <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                  <input class="form-control" type="text" id="number" name="cardnumber">
+                </p>
+                <p>
+                  <label for="date">
+                      <span>Expiration date:</span>
+                      <strong><abbr title="required">*</abbr></strong>
+                      <em>formatted as mm/yy</em>
+                    </label>
+                  <input class="form-control" type="text" id="date" name="expiration">
+                </p>
+              </section>
+            </div>
+          </div>
+          <section>
+
+            <button type="submit" class="btn btn-default">Validating the payment</button>
+            <div id="ex1" class="modal" data-coffee-payment="payModal">
+              <p>Thanks for clicking. That felt good.</p>
+              <a href="#" rel="modal:close">Close</a>
+            </div>
+          </section>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="scripts/paymentFormHandler.js" charset="utf-8"></script>
+  <script src="scripts/payment.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+</body>
+</html>
